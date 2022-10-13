@@ -9,7 +9,8 @@ const store = configureStore({
   middleware: [],
 });
 
-export type RootDispatch = typeof store.dispatch;
+type RootDispatch = typeof store.dispatch;
+
 export type RootState = ReturnType<typeof rootReducer>;
 
 export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
