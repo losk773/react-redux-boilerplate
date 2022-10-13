@@ -5,7 +5,7 @@ import { useTypedSelector } from '@/common/redux';
 import { IncrementButton } from '../components/IncrementButton';
 import { selectCounter } from '../home.slice';
 
-export const Home: React.FC = () => {
+export const Home = () => {
   const counter = useTypedSelector(selectCounter);
 
   return (
