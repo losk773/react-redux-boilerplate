@@ -1,9 +1,9 @@
 import React from 'react';
 import { RouteObject } from 'react-router-dom';
 
-import { Home } from './views/Home';
+import { HomeContainer } from './containers/HomeContainer';
 
 export const routes: RouteObject = {
   path: '/home',
-  element: <Home />,
+  element: <HomeContainer />,
 };
