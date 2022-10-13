@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { IState } from '@/common/redux/types';
+
 export type HomeState = {
   counter: number;
 };
@@ -17,8 +19,9 @@ export const homeSlice = createSlice({
     incrementAction: ({ counter }) => ({ counter: ++counter }),
   },
 });
-
 const { actions, reducer } = homeSlice;
+
+export const selectCounter = ({ home }: IState) => home.counter;
 
 export const { incrementAction } = actions;
 
