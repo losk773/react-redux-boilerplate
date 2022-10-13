@@ -1,3 +1,4 @@
+import Dotenv from 'dotenv-webpack';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -5,7 +6,6 @@ import path from 'path';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin } from 'webpack';
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
-
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
 }
@@ -39,11 +39,15 @@ const config: Configuration = {
       template: 'public/index.html',
     }),
     new HotModuleReplacementPlugin(),
+
     new ForkTsCheckerWebpackPlugin({
       async: false,
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
+    }),
+    new Dotenv({
+      path: `./.env.development`,
     }),
   ],
   devtool: 'inline-source-map',

@@ -1,4 +1,5 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -33,6 +34,9 @@ const config: Configuration = {
     plugins: [new TsconfigPathsPlugin()],
   },
   plugins: [
+    new Dotenv({
+      path: `./.env.production`,
+    }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
     }),
