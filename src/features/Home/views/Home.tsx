@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { useTypedDispatch, useTypedSelector } from '@/common/redux';
+import { useTypedSelector } from '@/common/redux';
 
-import { incrementAction } from '../home.slice';
+import { IncrementButton } from '../components/IncrementButton';
+import { selectCounter } from '../home.slice';
 
 export const Home: React.FC = () => {
-  const { counter } = useTypedSelector((state) => state.home);
-  const dispatch = useTypedDispatch();
+  const counter = useTypedSelector(selectCounter);
 
   return (
     <div>
       <h1>Home Page</h1>
-      <div>{counter}</div>
-      <button onClick={() => dispatch(incrementAction())}>increment</button>
+      <h2>{counter}</h2>
+      <IncrementButton />
     </div>
   );
 };
