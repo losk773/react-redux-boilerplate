@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { useTypedDispatch } from '@/common/redux';
+import { useAppDispatch } from '@/common/redux';
 
-import { incrementAction } from '../home.slice';
+import { incrementAction } from '../redux/home.slice';
 
 export const IncrementButton = () => {
-  const dispatch = useTypedDispatch();
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
     dispatch(incrementAction());

@@ -45,6 +45,7 @@ const config: Configuration = {
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
+      emitWarning: false,
     }),
     new Dotenv({
       path: `./.env.development`,

@@ -6,14 +6,14 @@ import { rootReducer } from './rootReducer';
 const store = configureStore({
   reducer: rootReducer,
   devTools: true,
-  middleware: [],
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([]),
 });
 
-type RootDispatch = typeof store.dispatch;
+export type RootDispatch = typeof store.dispatch;
 
 type RootState = ReturnType<typeof rootReducer>;
 
-export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
-export const useTypedDispatch: () => RootDispatch = useDispatch;
+export const useAppdSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useAppDispatch: () => RootDispatch = useDispatch;
 
 export default store;
