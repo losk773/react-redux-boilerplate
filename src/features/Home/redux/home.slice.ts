@@ -6,7 +6,6 @@ import { getUserById, getUsers } from '../requests/users.requests';
 const initialState: HomeState = {
   counter: 0,
   users: [],
-  userDetails: null,
   loading: false,
   error: null,
 };
@@ -30,7 +29,7 @@ export const homeSlice = createSlice({
       state.error = null;
     });
     builder.addCase(fetchUsers.fulfilled, (state, { payload }) => {
-      state.users = [...payload];
+      state.users = payload;
       state.loading = false;
       state.error = null;
     });
@@ -45,8 +44,8 @@ export const homeSlice = createSlice({
     });
     builder.addCase(fetchUserById.fulfilled, (state, { payload }) => {
       state.loading = false;
-      state.userDetails = payload;
       state.error = null;
+      state.users.push(payload);
     });
     builder.addCase(fetchUserById.rejected, (state, { error }) => {
       state.error = error.message;

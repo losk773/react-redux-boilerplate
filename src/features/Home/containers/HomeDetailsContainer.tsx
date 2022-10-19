@@ -3,22 +3,24 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { useAppDispatch } from '@/common/redux';
+import { State } from '@/common/redux/types';
 
-import { selectHome } from '../redux/home.selectors';
+import { getIsLoading, getUserById } from '../redux/home.selectors';
 import { fetchUserById } from '../redux/home.slice';
 
 export const HomeDetailsContainer = () => {
-  const { userDetails, loading } = useSelector(selectHome);
-  const { id } = useParams();
+  const { id = '' } = useParams();
+  const isLoading = useSelector(getIsLoading);
+  const userDetails = useSelector((state: State) => getUserById(state, Number(id)));
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (id) {
+    if (!userDetails) {
       dispatch(fetchUserById(id));
     }
-  }, [id, dispatch]);
+  }, [id, dispatch, userDetails]);
 
-  if (loading) {
+  if (isLoading) {
     return <div>Loading....</div>;
   }
 

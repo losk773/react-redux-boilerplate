@@ -1,7 +1,6 @@
 export type HomeState = {
   counter: number;
   users: User[];
-  userDetails: User | null;
   loading?: boolean;
   error?: string | null;
 };
