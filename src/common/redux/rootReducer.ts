@@ -2,8 +2,8 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import { homeReducer } from '@/features/Home';
 
-import { IState } from './types';
+import { State } from './types';
 
-export const rootReducer = combineReducers<IState>({
+export const rootReducer = combineReducers<State>({
   home: homeReducer,
 });

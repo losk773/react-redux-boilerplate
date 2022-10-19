@@ -1,5 +1,5 @@
 import { HomeState } from '@/features/Home';
 
-export interface IState {
+export type State = {
   home: HomeState;
-}
+};

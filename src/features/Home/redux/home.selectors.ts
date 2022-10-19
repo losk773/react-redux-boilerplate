@@ -1,5 +1,5 @@
-import { IState } from '@/common/redux/types';
+import { State } from '@/common/redux/types';
 
-export const selectHome = ({ home }: IState) => home;
-export const selectCounter = ({ home }: IState) => home.counter;
-export const selectUsers = ({ home }: IState) => home.users;
+export const selectHome = ({ home }: State) => home;
+export const selectCounter = ({ home }: State) => home.counter;
+export const selectUsers = ({ home }: State) => home.users;
