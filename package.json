@@ -18,7 +18,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
-    "react-router-dom": "^6.4.2"
+    "react-router-dom": "^6.4.2",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -29,6 +30,7 @@
     "@babel/runtime": "^7.18.9",
     "@types/dotenv-webpack": "^7.0.3",
     "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
+    "@types/styled-components": "^5.1.26",
     "@types/webpack-dev-server": "^4.7.2",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
     "@typescript-eslint/parser": "^5.34.0",
@@ -37,8 +39,6 @@
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^3.5.0",
-    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
