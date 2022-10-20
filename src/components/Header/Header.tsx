@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
   padding: 20px;
   background-color: black;
   text-transform: uppercase;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const Header = () => {
