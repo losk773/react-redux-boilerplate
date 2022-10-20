@@ -1,11 +1,20 @@
 # React RTK Boilerplate
 
+- React 18
+- React Router 6
+- Redux Toolkit
+- Typescript
+- Styled Components
+- Webpack
+
 ## Install
 
 - `npm i`
 - create `.env.development` based on `.env.example`
 - set env varibale `API_BASE_URL=https://jsonplaceholder.typicode.com/`
 - `npm start`
+
+## Structure 
 
 ### Features
 
