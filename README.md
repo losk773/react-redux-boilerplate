@@ -7,7 +7,7 @@
 - set env varibale `API_BASE_URL=https://jsonplaceholder.typicode.com/`
 - `npm start`
 
-## Features
+### Features
 
 Folder: `src/features` should contains any business-logic of application. All files in this folder are divided into modules.
 
