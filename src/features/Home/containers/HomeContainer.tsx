@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { useAppDispatch } from '@/common/redux';
+import { useAppDispatch, useAppSelector } from '@/common/redux';
 
 import { fetchUsers, selectHome } from '../redux/home.slice';
 
 export const HomeContainer = () => {
-  const { users, loading } = useSelector(selectHome);
+  const { users, loading } = useAppSelector(selectHome);
   const dispatch = useAppDispatch();
 
   useEffect(() => {

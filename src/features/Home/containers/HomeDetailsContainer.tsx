@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { useAppDispatch } from '@/common/redux';
-import { State } from '@/common/redux/types';
 
 import { fetchUserById, selectIsLoading, selectUserById } from '../redux/home.slice';
 
 export const HomeDetailsContainer = () => {
   const { id = '' } = useParams();
   const isLoading = useSelector(selectIsLoading);
-  const userDetails = useSelector((state: State) => selectUserById(state, Number(id)));
+  const userDetails = useSelector(selectUserById(Number(id)));
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {

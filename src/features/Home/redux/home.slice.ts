@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
+import memoizeOne from 'memoize-one';
 
 import { State } from '@/common/redux/types';
 
@@ -59,9 +60,8 @@ export const selectHome = ({ home }: State) => home;
 
 export const selectIsLoading = ({ home }: State) => home.loading;
 
-export const selectUserById = createSelector(
-  [selectHome, (_, userId: number) => userId],
-  ({ users }, userId) => users.find((user) => user.id === userId) || null,
+export const selectUserById = memoizeOne((userId: number) =>
+  createSelector([selectHome], ({ users }) => users.find((user) => user.id === userId) || null),
 );
 
 export default reducer;
