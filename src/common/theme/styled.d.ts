@@ -1,19 +1,8 @@
 import 'styled-components';
 
-export type Colors = {
-  primary: string;
-  secondary: string;
-};
-
-export type Indent = {
-  s: string;
-  m: string;
-  l: string;
-};
+import { ITheme } from './types';
 
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    colors: Colors;
-    indent: Indent;
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface DefaultTheme extends ITheme {}
 }
