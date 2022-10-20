@@ -1,5 +1,12 @@
 # React RTK Boilerplate
 
+- React 18
+- React Router 6
+- Redux Toolkit
+- Typescript
+- Styled Components
+- Webpack
+
 ## Install
 
 - `npm i`
@@ -7,13 +14,13 @@
 - set env varibale `API_BASE_URL=https://jsonplaceholder.typicode.com/`
 - `npm start`
 
-## Features
+## Structure 
+
+### Features
 
 Folder: `src/features` should contains any business-logic of application. All files in this folder are divided into modules.
 
 Module is an isolated part of an application that is responsible for an isolated piece of functionality.
-
-#### Features
 
 - `components` - all components that uses in the module
 - `containers`- "smart components", that includes any logic for working with data
