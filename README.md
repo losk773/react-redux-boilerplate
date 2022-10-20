@@ -2,10 +2,10 @@
 
 ## Install
 
-- run `npm i`
+- `npm i`
 - create `.env.development` based on `.env.example`
 - set env varibale `API_BASE_URL=https://jsonplaceholder.typicode.com/`
-- run `npm start`
+- `npm start`
 
 ## Features
 
