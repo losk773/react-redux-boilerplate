@@ -1,18 +1,25 @@
 # React RTK Boilerplate
 
+## Install
+
+- `npm i`
+- create `.env.development` based on `.env.example`
+- set env varibale `API_BASE_URL=https://jsonplaceholder.typicode.com/`
+- `npm start`
+
 ## Features
 
-В папке `src/features` располагается бизнес-логика приложения. Все файлы в этой папке разбиты по модулям.
+Folder: `src/features` should contains any business-logic of application. All files in this folder are divided into modules.
 
-Модуль представляет собой изолированную часть приложения, отвечающую за изолированную часть функциональности.
+Module is an isolated part of an application that is responsible for an isolated piece of functionality.
 
-#### Структура Features
+#### Features
 
-- `components` - компоненты используемые в модуле
-- `containers`- "Умные компоненты", которые содержат какую-либо логику для работы с данными
-- `constants` - константы
-- `redux` - файлы, связанные с redux (slices, selectors и т.д).
-- `requests` - файлы с запросами данных к бэкенду для данного модуля
-- `hooks` - react-хуки
-- `utils / utils.ts` - вспомогательная логика (утилиты)
-- `index.ts` - все компоненты, редюсеры и т.д, которые будут использоваться за пределами данного модуля должны быть объявлены и экспортированы здесь.
+- `components` - all components that uses in the module
+- `containers`- "smart components", that includes any logic for working with data
+- `constants` - all constants for module
+- `redux` - files for working with redux (slices, selectors etc.)
+- `requests` - any requests of data to backend
+- `hooks` - react-hooks
+- `utils / utils.ts` - any utilities for additional functionality
+- `index.ts` - all components (reducers, containers etc.), that will use out of this module should be init or exports here
