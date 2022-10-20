@@ -13,8 +13,6 @@ Folder: `src/features` should contains any business-logic of application. All fi
 
 Module is an isolated part of an application that is responsible for an isolated piece of functionality.
 
-#### Features
-
 - `components` - all components that uses in the module
 - `containers`- "smart components", that includes any logic for working with data
 - `constants` - all constants for module
