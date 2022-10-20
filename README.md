@@ -1,2 +1,2 @@
-# react-redux-boilerplate
-React/Redux boilerplate
+# react-rtk-boilerplate
+
