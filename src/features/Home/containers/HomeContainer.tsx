@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 
 import { useAppDispatch } from '@/common/redux';
 
-import { IncrementButton } from '../components/IncrementButton';
 import { fetchUsers, selectHome } from '../redux/home.slice';
 
 export const HomeContainer = () => {
-  const { counter, users, loading } = useSelector(selectHome);
+  const { users, loading } = useSelector(selectHome);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -18,8 +17,9 @@ export const HomeContainer = () => {
   return (
     <div>
       <h1>Home Page</h1>
-      <h2>{counter}</h2>
-      <IncrementButton />
+      <h3>
+        <Link to={'/counter'}>Counter Page</Link>
+      </h3>
       {!loading ? (
         <ul>
           {users.map((user) => (

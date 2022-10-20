@@ -1,5 +1,4 @@
 export type HomeState = {
-  counter: number;
   users: User[];
   loading?: boolean;
   error?: string | null;

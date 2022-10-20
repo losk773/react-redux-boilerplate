@@ -6,7 +6,6 @@ import { HomeState, User } from '../home.types';
 import { getUserById, getUsers } from '../requests/users.requests';
 
 const initialState: HomeState = {
-  counter: 0,
   users: [],
   loading: false,
   error: null,
@@ -22,9 +21,7 @@ export const fetchUserById = createAsyncThunk<User, string>(`${sliceName}/fetchU
 export const homeSlice = createSlice({
   name: sliceName,
   initialState,
-  reducers: {
-    incrementAction: (state) => ({ ...state, counter: state.counter + 1 }),
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.pending, (state) => {
       state.loading = true;
@@ -56,7 +53,7 @@ export const homeSlice = createSlice({
   },
 });
 
-const { actions, reducer } = homeSlice;
+const { reducer } = homeSlice;
 
 export const selectHome = ({ home }: State) => home;
 
@@ -66,7 +63,5 @@ export const selectUserById = createSelector(
   [selectHome, (_, userId: number) => userId],
   ({ users }, userId) => users.find((user) => user.id === userId) || null,
 );
-
-export const { incrementAction } = actions;
 
 export default reducer;

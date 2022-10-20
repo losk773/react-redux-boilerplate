@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { useAppDispatch } from '@/common/redux';
 
-import { incrementAction } from '../redux/home.slice';
+import { incrementAction } from '../redux/counter.slice';
 
 const StyledButton = styled.button`
   padding: 15px 25px;
