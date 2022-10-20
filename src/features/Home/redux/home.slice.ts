@@ -1,4 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
+
+import { State } from '@/common/redux/types';
 
 import { HomeState, User } from '../home.types';
 import { getUserById, getUsers } from '../requests/users.requests';
@@ -55,6 +57,15 @@ export const homeSlice = createSlice({
 });
 
 const { actions, reducer } = homeSlice;
+
+export const selectHome = ({ home }: State) => home;
+
+export const selectIsLoading = ({ home }: State) => home.loading;
+
+export const selectUserById = createSelector(
+  [selectHome, (_, userId: number) => userId],
+  ({ users }, userId) => users.find((user) => user.id === userId) || null,
+);
 
 export const { incrementAction } = actions;
 

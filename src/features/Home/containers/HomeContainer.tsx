@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch } from '@/common/redux';
 
 import { IncrementButton } from '../components/IncrementButton';
-import { selectHome } from '../redux/home.selectors';
-import { fetchUsers } from '../redux/home.slice';
+import { fetchUsers, selectHome } from '../redux/home.slice';
 
 export const HomeContainer = () => {
   const { counter, users, loading } = useSelector(selectHome);
